@@ -1,4 +1,4 @@
-# ChroniclesOfEternia
+# Chronicles Of Eternia
 Using Python I created a game calle "Chronicles of Eternia."
 
 # Story Line
