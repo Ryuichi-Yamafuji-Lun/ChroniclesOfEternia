@@ -19,13 +19,13 @@ class Map(object):
     'start': game_scenes.StartingScreen(),
     'death': game_scenes.Death(),
     'begin': game_scenes.Beginning(),
-    'forest': game_scenes.Forest(),
     'plain': game_scenes.Plains(),
     'mountain': game_scenes.Mountain(),
     'm_ruin': game_scenes.MountainRuins(),
     'kingdom': game_scenes.Kingdom(),
     'f_dungeon': game_scenes.FinalDungeon(),
     'f_room': game_scenes.FinalRoom(),
+    'forest': game_scenes.Forest(),
     'finish': game_scenes.Finish()
   }
   def __init__(self,start_scene):
