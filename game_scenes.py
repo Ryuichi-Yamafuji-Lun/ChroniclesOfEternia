@@ -232,24 +232,125 @@ class Kingdom(Scene):
 
     def enter(self):
       print("\t\t\t\t       ---The Kingdom---")
-      return 'f_dungeon'
+      print("-" * 90)
+      print(dedent("""
+      You look around to see where you have been teleported and find yourself in the throne room of the humans. The kings gurads
+      draw their sword and seem to be demanding a surrender. 
+
+      Press 1: Draw you bow
+
+      Press 2: Raise your hands up to surrender
+      """))
+      while True:
+         action = input("< ")
+         print("-" * 90)
+         if action == "1":
+            print(dedent("""
+            You draw your bow and get ready to fight. However in a flash you see the world turn upside down and you body with the bow still drawn.
+            """))
+            return 'death'
+         elif action == "2":
+            print(dedent("""
+            You surrender and the gurads put you in a shackle. They bring you infront of the king. As they bring yo uto the key the Eternia Crystal 
+            and the Kings Crown starts to shine brightly. Using this oppurtunity of the light you run out of the throne room and come across stairs.
+            """))
+            break
+         else:
+            print("Please select action")
+      print(dedent("""
+      Press 1: Go up
+
+      Press 2: Go down
+      """))  
+      while True:
+         action = input("< ")
+         print("-" * 90)
+         if action == "1":
+            print("You run up the stairs and end up on the top of the castle. With nowhere to run the guards surround you and stab you to death.")
+            return 'death'
+         elif action == "2":
+            print(dedent("""
+            You run down into the basement and come across the same engraving of the dragon as last time. The Eternia Crystal shines along with the dragon
+            eye. You then teleport out of the Kingdom.
+            """))
+            return 'f_dungeon'
+         else:
+            print("Input action")
     
 class FinalDungeon(Scene):
 
     def enter(self):
       print("\t\t\t\t     ---Zephyrs Dungeon---")
-      return 'f_room'
+      print(dedent("""
+      The Kingdoms basement were replaced by gloomy labrynth stone, where eerie shadows danced and whispered along the walls. The scent of 
+      moss and dampness assaulted your senses. As you cautiously make your way through the dimly lit corridors, you pick up faint sounds of
+      footsteps. You hide behind the walls and discover that the Fallen are also in the dungeon. You traverse deeper into the dungeon and 
+      you come across a large door similar to the door of the ruins. However, there are the Fallen guarding the doors.
+
+      Press 1: Sneak attack
+
+      Press 2: Create a distraction to slip past the Fallen
+
+      """))
+      
+      while True:
+         action = input("< ")
+         print("-" * 90)
+         if action == "1":
+            print(dedent("""
+            You go along the walls and prepare to shoot two arrows for the two Fallen standing guard. You let the arrows fly and hit both of them.
+            """))
+            break
+         elif action == "2":
+            print(dedent("""
+            You get ready to throw a stone to distract the but as you throw the stone you throw it near you. The Fallen turns towards you and sees you.
+            They sound the alarm and you get surrounded by hundreds of Fallen instantly. A barrgae of arrows from the Fallen come down on you.
+            """))
+            return 'death'
+         else:
+            print("Correct Input ")
+      if fragment == 1:
+        print(dedent("""
+        You head to the door and the Eternia Crystal shines brightly as it floats away from you it enters an engraving on the door. The door then opens 
+        and teleports you away.
+        """))
+        return 'f_room'
+      else:
+        print("The Eternia Crystal lights up then falls into pieces the door opens up and teleports you away")
+        return 'death'
     
 class FinalRoom(Scene):
 
     def enter(self):
       print("\t\t\t\t     ---The Throne Room---")
-      return 'forest'
+      print(dedent("""
+      You appear at an ancient throne room with at the very center a bow with a carving of a dragon. You pick up the bow and feel a surge of power. 
+      Then a voice comes into your head.
+      'Only those worthy can use the bow prove your worth by answering thy riddle. 
+        I am the beginning of eternity,
+        The end of time and space,
+        The beginning of every end,
+        And the end of every place.
+
+        What am I?
+
+      """))
+      action = input("< ")
+      print("-" * 90)
+      if action.upper() == "E":
+         print("You are worthy of possesing the bow of Yggdrasil. Use it to protect what yo most desire")
+         return 'forest'
+      else:
+         print("You are unworthy of the bow. Those unworthy must be put to rest")
+         return 'death'
 
 class Forest(Scene):
 
     def enter(self):
       print("\t\t\t\t       ---Elven Forest---")
+      print(dedent("""
+      You get transported to the Forest and see it run over by the Fallen. You draw the great bow and release an energy beam that cleanses the forest of all evil.
+      """))
       return 'finish'  
     
 class Finish(Scene):
