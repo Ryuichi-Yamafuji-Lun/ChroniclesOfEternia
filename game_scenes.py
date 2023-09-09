@@ -51,7 +51,7 @@ class Plains(Scene):
       print("\t\t\t\t      ---Golden Plain---")
       print("-" * 90)
       print(dedent("""
-      As you make you way across the Golden Plain, you get surrounded by the Fallen with their
+      As you make your way across the Golden Plain, you get surrounded by the Fallen with their
       corrupt arrows drawns.
 
       Press 1: Dodge
@@ -69,7 +69,7 @@ class Plains(Scene):
          elif action == "2":
             print(dedent(""" 
             You draw your arrow and let it fly. It hits one of the Fallen and the Fallen hesitate to shoot.
-            Using this oppurtunity you run towards Dragonkeep Mountain.
+            Using this opportunity you run towards Dragonkeep Mountain.
             """))
             return 'mountain'
          elif action == '3':
